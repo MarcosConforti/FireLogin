@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "834306116227",
+    "project_id": "firelogin-eddf7",
+    "storage_bucket": "firelogin-eddf7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834306116227:android:c917222a0aad8e371ae9b6",
+        "android_client_info": {
+          "package_name": "com.marcosconforti.firelogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHo9yJOOY1AxJmltLXo40c_NsOJfhllrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
