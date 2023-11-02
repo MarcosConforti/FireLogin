@@ -3,6 +3,8 @@ package com.marcosconforti.firelogin.ui.login
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.marcosconforti.firelogin.data.AuthService
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +20,8 @@ class LoginViewModel @Inject constructor(private val authService: AuthService) :
 
     private var _isLoading = MutableStateFlow<Boolean>(false)
     val isLoading: StateFlow<Boolean> = _isLoading
-    fun login(user: String, password: String, navigateToDetail:()-> Unit) {
+
+    fun login(user: String, password: String, navigateToDetail: () -> Unit) {
         viewModelScope.launch {
             _isLoading.value = true
             val result = withContext(Dispatchers.IO) {
@@ -30,6 +33,22 @@ class LoginViewModel @Inject constructor(private val authService: AuthService) :
                 Log.i("Login", "Error, valor nulo")
             }
             _isLoading.value = false
+        }
+    }
+
+    fun onGoogleLoginSelected(googleLauncherLogin: (GoogleSignInClient) -> Unit) {
+        val gsc = authService.getGoogleClient()
+        googleLauncherLogin(gsc)
+    }
+
+    fun loginWithGoogle(idToken: String, navigateToDetail: () -> Unit) {
+        viewModelScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                authService.loginWithGoogle(idToken)
+            }
+            if(result != null){
+                navigateToDetail()
+            }
         }
     }
 }
