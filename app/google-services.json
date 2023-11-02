@@ -12,7 +12,20 @@
           "package_name": "com.marcosconforti.firelogin"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "834306116227-o3t846se9grtdv6l8gnu4f3s2n00so02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.marcosconforti.firelogin",
+            "certificate_hash": "63344b6a65ed3b089d0ac29fbc46633fd6e1bf7b"
+          }
+        },
+        {
+          "client_id": "834306116227-g1lserf1ej4n4k0a21s6rp0su9rjcmeh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBHo9yJOOY1AxJmltLXo40c_NsOJfhllrs"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834306116227-g1lserf1ej4n4k0a21s6rp0su9rjcmeh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
